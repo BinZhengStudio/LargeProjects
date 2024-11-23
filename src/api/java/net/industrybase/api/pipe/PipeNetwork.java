@@ -282,6 +282,8 @@ public class PipeNetwork {
 			PipeUnit primaryUnit = this.components.get(node);
 			PipeUnit secondaryUnit = this.components.get(another);
 
+			if (primaryUnit == null || secondaryUnit == null) return; // TODO
+
 			// spilt
 			PipeUnit unit = primaryUnit.spilt(node, direction);
 			unit.forEach((pos) -> this.components.put(pos, unit));

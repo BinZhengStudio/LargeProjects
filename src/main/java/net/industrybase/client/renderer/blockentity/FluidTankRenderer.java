@@ -44,6 +44,8 @@ public class FluidTankRenderer implements BlockEntityRenderer<FluidTankBlockEnti
 	}
 
 	public static <T extends BlockEntity> void renderWater(BlockEntityRenderer<T> renderer, float waterAmount, T blockEntity, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+		if (waterAmount <= 0.005) return;
+
 		BlockPos pos = blockEntity.getBlockPos();
 		AABB box = renderer.getRenderBoundingBox(blockEntity);
 		poseStack.translate(-pos.getX(), -pos.getY(), -pos.getZ());
