@@ -64,7 +64,7 @@ public class FluidTankRenderer implements BlockEntityRenderer<FluidTankBlockEnti
 		float u1 = sprites[0].getU(1.0F);
 		float v1 = sprites[0].getV(1.0F);
 		float u01 = sprites[1].getU(0.0F);
-		float v01 = sprites[1].getV(1.0F - waterAmount);
+		float v01 = sprites[1].getV((1.0F - waterAmount) * 0.5F);
 		float u11 = sprites[1].getU(8.0F / 16.0F); // TODO
 		float v11 = sprites[1].getV(8.0F / 16.0F);
 		int fluidColor = IClientFluidTypeExtensions.of(NeoForgeMod.WATER_TYPE.value()).getTintColor(); // 获取水的颜色
