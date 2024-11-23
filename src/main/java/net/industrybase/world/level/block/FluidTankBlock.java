@@ -45,7 +45,7 @@ public class FluidTankBlock extends BaseEntityBlock {
 			IFluidHandler tank = level.getCapability(Capabilities.FluidHandler.BLOCK, pos, state, blockEntity, hitResult.getDirection());
 			if (tank != null) {
 				tank.fill(new FluidStack(Fluids.WATER, FluidType.BUCKET_VOLUME), IFluidHandler.FluidAction.EXECUTE);
-				if (!player.getAbilities().instabuild) player.setItemInHand(hand, new ItemStack(Items.BUCKET));
+//				if (!player.getAbilities().instabuild) player.setItemInHand(hand, new ItemStack(Items.BUCKET)); TODO
 			}
 			return ItemInteractionResult.sidedSuccess(level.isClientSide);
 		}
