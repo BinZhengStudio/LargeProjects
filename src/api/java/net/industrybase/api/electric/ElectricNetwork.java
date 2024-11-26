@@ -306,8 +306,6 @@ public class ElectricNetwork {
 			return this.tasks.offer(() -> {
 				linkWire(from, to);
 				callback.run(); // 只需要一方保存即可，不影响最终加载后的连通域
-				this.level.getChunk(from).setUnsaved(true); // TODO
-				this.level.getChunk(to).setUnsaved(true);
 			});
 		}
 		return false;
