@@ -29,10 +29,10 @@ public class SubscribeWireConnPacket implements CustomPacketPayload {
 	public static void handler(SubscribeWireConnPacket msg, IPayloadContext context) {
 		context.enqueueWork(() -> {
 			ServerPlayer player = (ServerPlayer) context.player();
-			if (player.level().isAreaLoaded(msg.target, 0)) {
+//			if (player.level().isAreaLoaded(msg.target, 0)) {
 				ElectricNetwork network = ElectricNetwork.Manager.get(player.level());
 				PacketDistributor.sendToPlayer(player, new ReturnWireConnPacket(msg.target, network.subscribeWire(msg.target, player)));
-			}
+//			}
 		});
 //		context.setPacketHandled(true);
 	}
